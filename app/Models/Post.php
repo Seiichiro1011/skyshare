@@ -16,7 +16,7 @@ class Post extends Model
 
         return $this->belongsTo(User::class)->withTrashed();
     }
-    # To get all rhe categories of a post
+    # To get all rhe emotions of a post
     public function emotionPost(){
         return $this->hasMany(EmotionPost::class);
     }

@@ -128,9 +128,9 @@
                                     class="list-group-item {{ request()->is('admin/posts') ? 'active' : '' }}">
                                     <i class="fa-solid fa-newspaper"></i> Posts
                                 </a>
-                                <a href="{{ route('admin.categories') }}"
-                                    class="list-group-item {{ request()->is('admin/categories') ? 'active' : '' }}">
-                                    <i class="fa-solid fa-tags"></i> Categories
+                                <a href="{{ route('admin.emotions') }}"
+                                    class="list-group-item {{ request()->is('admin/emotions') ? 'active' : '' }}">
+                                    <i class="fa-solid fa-tags"></i> Emotions
                                 </a>
                             </div>
                         </div>

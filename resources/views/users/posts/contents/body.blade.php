@@ -5,7 +5,7 @@
     </a>
 </div>
 <div class="card-body">
-    {{-- heart button +no. of likes + categories --}}
+    {{-- heart button +no. of likes + emotions --}}
     <div class="row align-items-center">
         <div class="col-auto pe-0">
             @if ($post->isLiked())

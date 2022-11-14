@@ -44,7 +44,7 @@ class PostController extends Controller
         $this->post->description = $request->description;
         $this->post->save();
 
-        #Save the categories to the emotion_post table
+        #Save the emotions to the emotion_post table
         foreach ($request->emotion as $emotion_id) {
             $emotion_post[] = ['emotion_id' => $emotion_id];
         }
@@ -81,18 +81,18 @@ class PostController extends Controller
             return redirect()->route('index');
         }
 
-        $all_categories = $this->emotion->all();
+        $all_emotions = $this->emotion->all();
 
         #Get all the emotion IDs of this post. Save in an array
-        $selected_categories = [];
+        $selected_emotions = [];
         foreach ($post->emotionPost as $emotion_post) {
-            $selected_categories[] = $emotion_post->emotion_id;
+            $selected_emotions[] = $emotion_post->emotion_id;
         }
 
         return view('users.posts.edit')
             ->with('post', $post)
-            ->with('all_categories', $all_categories)
-            ->with('selected_categories', $selected_categories);
+            ->with('all_emotions', $all_emotions)
+            ->with('selected_emotions', $selected_emotions);
     }
     public function update(Request $request, $id)
     {
@@ -109,7 +109,7 @@ class PostController extends Controller
         $post->description = $request->description;
 
         $post->emotionPost()->delete();
-        #Save the categories to the emotion_post table
+        #Save the emotions to the emotion_post table
         foreach ($request->emotion as $emotion_id) {
             $emotion_post[] = ['emotion_id' => $emotion_id];
         }

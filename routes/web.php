@@ -2,7 +2,7 @@
 
 use App\Http\Controllers\Admin\UsersController;
 use App\Http\Controllers\Admin\PostsController;
-use App\Http\Controllers\Admin\CategoriesController;
+use App\Http\Controllers\Admin\EmotionsController;
 use Illuminate\Support\Facades\Route;
 
 use App\Http\Controllers\HomeController;
@@ -38,10 +38,10 @@ Route::group(['prefix'=> 'admin','as'=>'admin.','middleware'=>'admin'],function(
     Route::delete('/posts/{id}/hide',[PostsController::class,'hide'])->name('posts.hide');
     Route::patch('/posts/{id}/unhide',[PostsController::class,'unhide'])->name('posts.unhide');
     // emotion
-    Route::get('/categories',[CategoriesController::class,'index'])->name('categories');
-    Route::post('/categories/store', [CategoriesController::class, 'store'])->name('categories.store');
-    Route::delete('/categories/{id}/delete',[CategoriesController::class,'destroy'])->name('categories.destroy');
-    Route::patch('/categories/{id}/update',[CategoriesController::class,'update'])->name('categories.update');
+    Route::get('/emotions',[EmotionsController::class,'index'])->name('emotions');
+    Route::post('/emotions/store', [EmotionsController::class, 'store'])->name('emotions.store');
+    Route::delete('/emotions/{id}/delete',[EmotionsController::class,'destroy'])->name('emotions.destroy');
+    Route::patch('/emotions/{id}/update',[EmotionsController::class,'update'])->name('emotions.update');
 
 });
 
