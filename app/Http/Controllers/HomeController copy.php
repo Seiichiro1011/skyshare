@@ -23,7 +23,9 @@ class HomeController extends Controller
         $this->post=$post;
         $this->user=$user;
         $this->like=$like;
+
     }
+
     /**
      * Show the application dashboard.
      *
@@ -31,12 +33,12 @@ class HomeController extends Controller
      */
     public function index()
     {
-        $all_posts = $this->post->latest()->paginate(10);
-        $liked_users = $this->like->all();
-        $suggested_users = $this->getSuggestedUsers();
-        return view('users.home')->with('all_posts', $all_posts)
-            ->with('suggested_users', $suggested_users)
-            ->with('liked_users', $liked_users);
+        $all_posts=$this->post->latest()->paginate(10);
+        $liked_users=$this->like->all();
+        $suggested_users=$this->getSuggestedUsers();
+        return view('users.home')->with('all_posts',$all_posts)
+                                ->with('suggested_users',$suggested_users)
+                                ->with('liked_users',$liked_users);
     }
     public function suggestions()
     {
