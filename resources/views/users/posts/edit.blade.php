@@ -12,9 +12,9 @@
         <label for="emotion" class="form-label d-block fw-bold">
             Emotions <span class="text-muted fw-normal">(up to 3)</span>
         </label>
-        @foreach($all_categories as $emotion)
+        @foreach($all_emotions as $emotion)
         <div class="form-check form-check-inline">
-            @if (in_array($emotion->id,$selected_categories))
+            @if (in_array($emotion->id,$selected_emotions))
                 <input type="checkbox" name="emotion[]" id="{{$emotion->name}}" value="{{ $emotion->id}}" class="form-check-input" checked>
             @else
                 <input type="checkbox" name="emotion[]" id="{{$emotion->name}}" value="{{ $emotion->id}}" class="form-check-input">
