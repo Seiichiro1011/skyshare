@@ -47,7 +47,7 @@ Route::group(['prefix'=> 'admin','as'=>'admin.','middleware'=>'admin'],function(
 
 // middleware is for check the requests across the site
 Route::group(['middleware'=>'auth'],function(){
-    Route::get('/', [HomeController::class, 'index'])->name('index');
+    Route::get('/home', [HomeController::class, 'index'])->name('index');
     Route::get('/suggestions', [HomeController::class, 'suggestions'])->name('suggestions');
     Route::get('/search', [HomeController::class, 'search'])->name('search');
 

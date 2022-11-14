@@ -26,7 +26,7 @@
     <div id="app">
         <nav class="navbar navbar-expand-md navbar-light bg-white shadow-sm">
             <div class="container">
-                <a class="navbar-brand" href="{{ url('/') }}">
+                <a class="navbar-brand" href="{{ url('/home') }}">
                     <h1 class="h5 mb-0"> {{ config('app.name') }}</h1>
                 </a>
                 <button class="navbar-toggler" type="button" data-bs-toggle="collapse"
